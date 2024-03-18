@@ -1,0 +1,23 @@
+<div class="container-fluid" id="clients">
+    <h1>Clients</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Client Name</th>
+            <th>Acumatica ID</th>
+            <th>Country</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for client in clients %}
+            <tr>
+                <td>{{ client.id }}</td>
+                <td>{{ client.name }}</td>
+                <td>{{ client.acumatica_id }}</td>
+                <td>{{ client.country.name }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
