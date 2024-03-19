@@ -12,7 +12,13 @@
         </thead>
         <tbody>
         {% for client in clients %}
-            <tr>
+            <tr
+                    hx-get="/client/{{ client.id }}"
+                    hx-swap="outerHTML"
+                    hx-trigger="click"
+                    hx-target="#clients"
+                    hx-indicator="#loading"
+            >
                 <td>{{ client.id }}</td>
                 <td>{{ client.name }}</td>
                 <td>{{ client.acumatica_id }}</td>
