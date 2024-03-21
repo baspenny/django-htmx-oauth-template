@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container-fluid pt-3">
+        <div class="row">
+            <div class="col-md-3">
+                {% include 'partials/search.html' %}
+            </div>
+            <div class="col-md-9">
+                {% include 'partials/client/client_list.html' %}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,5 +1,3 @@
-import time
-
 from django.shortcuts import render
 from app.models import Client
 from django.db.models import Q
@@ -17,9 +15,9 @@ def list(request):
             )
 
 
-        return render(request, 'partials/clients.html', context={'clients': qs})
+        return render(request, 'partials/client/client_list.html', context={'clients': qs})
 
-    return render(request, 'home.html', context={'clients': Client.objects.all()})
+    return render(request, 'clients.html', context={'clients': Client.objects.all()})
 
 
 def detail(request, id):
@@ -29,4 +27,4 @@ def detail(request, id):
         pass
     if request.method == 'DELETE':
         pass
-    return render(request, 'partials/client_detail.html', context={'client': Client.objects.get(id=id)})
+    return render(request, 'partials/client/client_detail.html', context={'client': Client.objects.get(id=id)})

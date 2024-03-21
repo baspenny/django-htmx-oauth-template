@@ -1,0 +1,8 @@
+<form hx-get="{% url 'client_list' %}" hx-target="#clients" hx-swap="outerHTML">
+    <div class="form-group">
+        <label for="searchbar"><span class="h3">Search</span></label>
+        <input id="searchbar" type="text" name="search-clients" class="form-control"
+               placeholder="Client name or Acumatica code">
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Search</button>
+</form>

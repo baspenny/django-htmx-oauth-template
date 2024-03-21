@@ -6,6 +6,12 @@ name = "pypi"
 [packages]
 django = "*"
 django-htmx = "*"
+python-environ = "*"
+social-auth-app-django = "*"
+uwsgi = "*"
+pillow = "*"
+django-storages = "*"
+google-cloud-storage = "*"
 
 [dev-packages]
 
