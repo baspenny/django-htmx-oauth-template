@@ -24,6 +24,10 @@ Styting is done using Bootstrap 5 (for now).
 2. Activate the virtual environment by running `pipenv shell`.
 3. Create superuser using `python manage.py createsuperuser` and follow the prompts.
 3. Run the migrations using `python manage.py migrate`.
-4. Load the data from the dump file using `python manage.py loaddata dump.json`.
 5. Start the development server using `python manage.py runserver`.
 6. Visit the application in your browser at `http://localhost:8000`.
+
+> Please note if you use your Google Credentials and you want to open the admin page, that you elevate your user to `superuser` 
+> in the database so you can access the Django Admin
+
+

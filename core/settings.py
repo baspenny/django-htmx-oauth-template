@@ -145,12 +145,12 @@ STORAGES = {
     },
 }
 # Overwrite default to use Google Cloud Storage
-if os.environ.get('USE_GCS'):
+if os.environ.get('USE_GCS') == "yes":
     STORAGES['default'] = {
         "BACKEND": "storages.backends.gcloud.GoogleCloudStorage",
         "OPTIONS": {
-            "bucket_name": "glo-tech-incubeta-technology-foodportal",
-            "project_id":"glo-tech-incubeta-technology",
+            "bucket_name": os.environ.get("GCS_BUCKET", "glo-tech-incubeta-technology-foodportal"),
+            "project_id":os.environ.get("PROJECT_ID", "glo-tech-incubeta-technology"),
             "default_acl": "publicRead"
         },
     }
