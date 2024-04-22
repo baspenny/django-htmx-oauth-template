@@ -5,9 +5,9 @@ It is to show the capabilities of HTMX in a Django project.
 Styting is done using Bootstrap 5 (for now).
 
 ## Project Structure
-
+- `core` contains the Django project files including the settings file
 - `app/templates/base.html`: This is the base HTML file for the web application. It includes the main navigation and layout for the application.
-- `dump.json`: This file contains a dump of data in JSON format. It includes data for various models such as currency, exchange rate, license, advertiser, country, vat, and client.
+- `app/models.py` contains a Profile that is linked to the built-in Django User. You can enrich this model to your specific use case
 
 ## Setup
 
@@ -28,6 +28,6 @@ Styting is done using Bootstrap 5 (for now).
 6. Visit the application in your browser at `http://localhost:8000`.
 
 > Please note if you use your Google Credentials and you want to open the admin page, that you elevate your user to `superuser` 
-> in the database so you can access the Django Admin
+> in the database, so you can access the Django Admin
 
 
