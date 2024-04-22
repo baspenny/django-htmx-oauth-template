@@ -17,7 +17,7 @@ import environ
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 env = environ.Env(DEBUG=(bool, True))
-env_locations = ['.env', 'tmp/.env']
+env_locations = ['.env', '/tmp/.env']
 
 for e in env_locations:
     if os.path.isfile(e):
