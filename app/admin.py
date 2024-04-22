@@ -1,40 +1,19 @@
+from django.contrib.auth.admin import UserAdmin
+from django.contrib.auth.models import User
 from django.contrib import admin
-from app.models import Currency, ExchangeRate, License, Advertiser, Country, Vat, Client
+
+from app.models import Profile
 
 
-# Register your models here.
-class CurrencyAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in Currency._meta.fields]
+class ProfileInline(admin.StackedInline):
+    model = Profile
+    can_delete = False
+    verbose_name_plural = "Profiles"
 
 
-class ExchangeRateAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in ExchangeRate._meta.fields]
+class CustomizedUserAdmin(UserAdmin):
+    inlines = (ProfileInline,)
 
 
-class LicenseAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in License._meta.fields]
-
-
-class AdvertiserAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in Advertiser._meta.fields]
-
-
-class CountryAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in Country._meta.fields]
-
-
-class VatAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in Vat._meta.fields]
-
-
-class ClientAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in Client._meta.fields]
-
-
-admin.site.register(Currency, CurrencyAdmin)
-admin.site.register(ExchangeRate, ExchangeRateAdmin)
-admin.site.register(License, LicenseAdmin)
-admin.site.register(Advertiser, AdvertiserAdmin)
-admin.site.register(Country, CountryAdmin)
-admin.site.register(Vat, VatAdmin)
-admin.site.register(Client, ClientAdmin)
+admin.site.unregister(User)
+admin.site.register(User, CustomizedUserAdmin)
